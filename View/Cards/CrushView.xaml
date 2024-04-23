@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="CalendarPract6.View.Cards.CrushView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CalendarPract6.View.Cards"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:cardsvm="clr-namespace:CalendarPract6.ViewModel.CardsVM" d:DataContext="{d:DesignInstance Type=cardsvm:CrushViewModel}"
+             d:DesignHeight="100" d:DesignWidth="550">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="7*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Image Source="{Binding Image}" MaxWidth="100" MaxHeight="100"/>
+            <!-- биндинг image -->
+        </Grid>
+        <Grid Grid.Column="1">
+            <ToggleButton x:Name="toggleButton"
+              Content="{materialDesign:PackIcon Kind=Heart,Size=21}"
+              IsChecked="{Binding IsChecked, Mode=TwoWay}"
+              Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
+              ToolTip="MaterialDesignFlatPrimaryToggleButton" 
+              Background="#FFE9DA79">
+                <ToggleButton.Triggers>
+                    <EventTrigger RoutedEvent="ToggleButton.Checked">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="toggleButton"
+                                     Storyboard.TargetProperty="(ToggleButton.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)"
+                                     To="1.2" Duration="0:0:0.1" AutoReverse="True"/>
+                                <DoubleAnimation Storyboard.TargetName="toggleButton"
+                                     Storyboard.TargetProperty="(ToggleButton.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)"
+                                     To="1.2" Duration="0:0:0.1" AutoReverse="True"/>
+                                <DoubleAnimation Storyboard.TargetName="toggleButton"
+                                     Storyboard.TargetProperty="(ToggleButton.RenderTransform).(TransformGroup.Children)[1].(SkewTransform.AngleX)"
+                                     To="10" Duration="0:0:0.1" AutoReverse="True"/>
+                                <DoubleAnimation Storyboard.TargetName="toggleButton"
+                                     Storyboard.TargetProperty="(ToggleButton.RenderTransform).(TransformGroup.Children)[1].(SkewTransform.AngleY)"
+                                     To="-10" Duration="0:0:0.1" AutoReverse="True"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </ToggleButton.Triggers>
+                <ToggleButton.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                        <SkewTransform AngleX="0" AngleY="0"/>
+                    </TransformGroup>
+                </ToggleButton.RenderTransform>
+            </ToggleButton>
+        </Grid>
+        <Grid Grid.Column="2">
+            <Label Content="{Binding CrushName}" FontFamily="Century Gothic" FontSize="22" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Foreground="#E5F9DB19" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <!-- биндинг crushName -->
+        </Grid>
+    </Grid>
+</UserControl>
+
