@@ -89,9 +89,6 @@
     <Compile Include="Model\Day.cs" />
     <Compile Include="ViewModel\CardsVM\CrushViewModel.cs" />
     <Compile Include="ViewModel\CardsVM\DayViewModel.cs" />
-    <Compile Include="ViewModel\Helpers\BindableCommand.cs" />
-    <Compile Include="ViewModel\Helpers\BindingHelper.cs" />
-    <Compile Include="ViewModel\Helpers\SerDeser.cs" />
     <Page Include="View\Cards\CrushView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -196,7 +193,19 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\HelperLib\HelperLib.csproj">
+      <Project>{193ded90-7756-4f14-a8d0-f90ee0d8ef9b}</Project>
+      <Name>HelperLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SerDeserLib\SerDeserLib.csproj">
+      <Project>{aa072423-fbc9-4be4-b0f2-788486ead32c}</Project>
+      <Name>SerDeserLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModel\Helpers\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.5.0.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.5.0.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

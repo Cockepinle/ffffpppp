@@ -79,3 +79,7 @@ C:\Users\alepi\OneDrive\Рабочий стол\CalendarPract6\bin\Debug\GalaSof
 C:\Users\alepi\OneDrive\Рабочий стол\CalendarPract6\bin\Debug\GalaSoft.MvvmLight.Extras.xml
 C:\Users\alepi\OneDrive\Рабочий стол\CalendarPract6\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
 C:\Users\alepi\OneDrive\Рабочий стол\CalendarPract6\bin\Debug\GalaSoft.MvvmLight.Platform.xml
+C:\Users\alepi\OneDrive\Рабочий стол\CalendarPract6\bin\Debug\SerDeserLib.dll
+C:\Users\alepi\OneDrive\Рабочий стол\CalendarPract6\bin\Debug\SerDeserLib.pdb
+C:\Users\alepi\OneDrive\Рабочий стол\CalendarPract6\bin\Debug\HelperLib.dll
+C:\Users\alepi\OneDrive\Рабочий стол\CalendarPract6\bin\Debug\HelperLib.pdb

@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:CalendarPract6.View.Pages"
-      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:calendarpract6="clr-namespace:CalendarPract6" d:DataContext="{d:DesignInstance Type=calendarpract6:MainViewModel}"
       mc:Ignorable="d"
       d:DesignHeight="800" d:DesignWidth="575"
       Title="CalendarPage">
